@@ -1,4 +1,4 @@
-package My_shelfie;
+package my_shelfy;
 import java.util.*;
 
 public class Board
