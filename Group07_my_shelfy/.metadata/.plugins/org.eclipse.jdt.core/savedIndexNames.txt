@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\leowi\OneDrive\Desktop\progetto\Group_07\Group07_my_shelfy\.metadata\.plugins\org.eclipse.jdt.core
