@@ -5,5 +5,5 @@
  * @author pippo
  *
  */
-module Group07_my_shelfy {
+module Group07_my_shelfie {
 }
