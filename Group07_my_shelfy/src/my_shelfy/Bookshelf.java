@@ -13,10 +13,6 @@ public class Bookshelf {
 			for (int j = 0; j < columns; ++j)
 				schema_matrice[i][j] = new Bookshelf();
 	}
-
-	private int scelta_colonna{
-		
-	}
 	
 	private int get_columns(){
 		do {
