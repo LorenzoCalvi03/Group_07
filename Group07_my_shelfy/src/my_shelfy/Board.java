@@ -7,7 +7,7 @@ public class Board
 		Tile[][] play_ground = new Tile[Game_Master.g.cols][Game_Master.g.rows];
 	
 	public
-		// Board constructor, initialiazing private members
+		// Board constructor, initializing private members
 		Board()
 		{
 			for (int i = 0; i < Game_Master.g.cols; ++i)
