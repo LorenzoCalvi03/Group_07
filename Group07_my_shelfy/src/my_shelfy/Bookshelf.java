@@ -1,8 +1,8 @@
 package my_shelfy;
 
 public class Bookshelf {
-	private int rows=5;
-	private int columns=6;
+	private int rows=6;
+	private int columns=5;
 	 private
 	    Bookshelf[][] schema_matrice = new Bookshelf[rows][columns];
 	
