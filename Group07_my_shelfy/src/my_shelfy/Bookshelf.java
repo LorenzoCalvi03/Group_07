@@ -1,4 +1,5 @@
 package my_shelfy;
+import java.util.*;
 
 public class Bookshelf {
 	private int rows=6;
@@ -13,6 +14,17 @@ public class Bookshelf {
 				schemaMatrice[i][j] = new Bookshelf();
 	}
 	
-	private void 
+	private int get_columns(){
+		do {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("In che colonna vuoi inserire le carte? (compreso tra 1 e 6)");
+		int col_sel=sc.nextInt();// per col_sel s'intende la colonna selezionata dal giocatore
+		
+		if(col_sel<1 && col_sel>6) {
+			System.out.println("Colonna inesistente, seleziona una colonna giusta");
+		}
+		}while(col_sel>1 && col_sel<6)
+		
+	}
 
 }
