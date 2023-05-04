@@ -15,16 +15,20 @@ public class Bookshelf {
 	}
 	
 	private int getColumns(){
+		int colSel;
 		do {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("In che colonna vuoi inserire le carte? (compreso tra 1 e 6)");
-		int colSel=sc.nextInt();// per colSel s'intende la colonna selezionata dal giocatore
+		colSel=sc.nextInt();// per colSel s'intende la colonna selezionata dal giocatore
 		
 		if(colSel<1 && colSel>6) {
 			System.out.println("Colonna inesistente, seleziona una colonna giusta");
 		}
-		}while(colSel>1 && colSel<6)
+		}while(colSel<1 && colSel>6);
 		
+		
+		
+	
 	}
 
 }
