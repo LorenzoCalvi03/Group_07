@@ -14,16 +14,16 @@ public class Bookshelf {
 				schemaMatrice[i][j] = new Bookshelf();
 	}
 	
-	private int get_columns(){
+	private int getColumns(){
 		do {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("In che colonna vuoi inserire le carte? (compreso tra 1 e 6)");
-		int col_sel=sc.nextInt();// per col_sel s'intende la colonna selezionata dal giocatore
+		int colSel=sc.nextInt();// per colSel s'intende la colonna selezionata dal giocatore
 		
-		if(col_sel<1 && col_sel>6) {
+		if(colSel<1 && colSel>6) {
 			System.out.println("Colonna inesistente, seleziona una colonna giusta");
 		}
-		}while(col_sel>1 && col_sel<6)
+		}while(colSel>1 && colSel<6)
 		
 	}
 
