@@ -18,31 +18,36 @@ public class Bookshelf {
 		int colSel;
 		do {
 		Scanner sc= new Scanner(System.in);
-		System.out.println("In che colonna vuoi inserire le carte? (compreso tra 1 e 6)");
+		System.out.println("In che colonna vuoi inserire le carte?");
 		colSel=sc.nextInt();// per colSel s'intende la colonna selezionata dal giocatore
 		
 		if(colSel<rows && colSel>columns) {
 			System.out.println("Colonna inesistente, seleziona una colonna giusta");
+			sc.close();
 		}
 		}while(colSel<rows && colSel>columns);
 		
 		return colSel;	
-	}
-	
-	public static int countEmptyspace (Bookshelf[][] schemaMatrice, int colSel) {
-		int emptySpaces=0;
 		
-		for(int i=0; i<schemaMatrice.length; i++) {
-			if (schemaMatrice[i][colSel]== null) {
-				emptySpaces++;
-			}
-		}
-		System.out.println("La colonna ha"+emptySpaces+" spazi vuoti");
-		return emptySpaces;
 	}
 	
+	public static int[] countEmptyspacePercolumn (Bookshelf[][] schemaMatrice) {
+		int[] emptySpacesPercolumn = new int[schemaMatrice[0].length];
+		for(int col=0; col<schemaMatrice[0].length;col++) {
+			for(int row=0; row<schemaMatrice.length; row++) {
+			if (schemaMatrice[row][col]== null) {
+		    System.out.println("La colonna"+col+"ha"+emptySpacesPercolumn+" spazi vuoti");
+				emptySpacesPercolumn[col]++;
+			}
+		 }
+		}
+		return emptySpacesPercolumn;
+	}
 	
-	
+	public static void fillcolumn {
+		//questo metodo deve ricevere il numero di carte, e deve verificare se quella colonna è libera
+		
+	}
 	
 	
 	
