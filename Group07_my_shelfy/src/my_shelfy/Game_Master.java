@@ -23,7 +23,8 @@ public class Game_Master
 	public 
 		// check if given tile at x y is accesible based on number of players
 		boolean is_tile_accessible(int _x, int _y)
-		{
+		
+	{
 			if(accessible_tiles[_x][_y] <= n_players) 
 			{
 				return true;
