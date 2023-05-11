@@ -16,7 +16,7 @@ public class Main {
 		{	
 			for (int j = 0; j < Game_Master.g.rows; ++j)
 			{
-				System.out.print(board.get_tile(i, j).get_object().get_type() + "\t");
+				System.out.print(board.getTile(i, j).get_object().get_type() + "\t");
 			}
 			System.out.println();
 		}

@@ -10,20 +10,26 @@ public class Game_Master
 	
 	
 	private 
-		int[][] accessible_tiles = new int[cols][rows];
+		int[][] accessible_tiles = {{5, 5, 5, 3, 4, 5, 5, 5, 5}, 
+									{5, 5, 5, 2, 2, 4, 5, 5, 5},  
+									{5, 5, 3, 2, 2, 2, 3, 5, 5}, 
+									{5, 4, 2, 2, 2, 2, 2, 2, 3}, 
+									{4, 2, 2, 2, 2, 2, 2, 2, 4}, 
+									{3, 2, 2, 2, 2, 2, 2, 4, 5}, 
+									{5, 5, 3, 2, 2, 2, 3, 5, 5}, 
+									{5, 5, 5, 4, 2, 2, 5, 5, 5}, 
+									{5, 5, 5, 5, 4, 3, 5, 5, 5}};
 		int n_players = 0;
 
 	// chiedere come riempire piu facilmente il tavolo da gioco senza contare casella per casella
 		Game_Master()
 		{
-			for(int i = 0; i < cols; ++i)
-				accessible_tiles[0][i] = 5;
 		}
 	
 	public 
 		// check if given tile at x y is accesible based on number of players
-		boolean is_tile_accessible(int _x, int _y)
-		
+	boolean is_tile_accessible(int _x, int _y)
+
 	{
 			if(accessible_tiles[_x][_y] <= n_players) 
 			{
