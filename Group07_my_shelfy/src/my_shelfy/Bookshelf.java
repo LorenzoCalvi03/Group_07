@@ -28,27 +28,40 @@ public class Bookshelf {
 		}while(colSel<rows && colSel>columns);
 		
 		return colSel;	
-		
 	}
-	
-	public static int[] countEmptyspacePercolumn (Bookshelf[][] schemaMatrice) {
-		int[] emptySpacesPercolumn = new int[schemaMatrice[0].length];
-		for(int col=0; col<schemaMatrice[0].length;col++) {
-			for(int row=0; row<schemaMatrice.length; row++) {
-			if (schemaMatrice[row][col]== null) {
-		    System.out.println("La colonna"+col+"ha"+emptySpacesPercolumn+" spazi vuoti");
-				emptySpacesPercolumn[col]++;
+		
+		
+		public int countEmptyspace (Bookshelf[][] schemaMatrice, int colSel) {
+			int emptySpaces=0;
+			
+			for(int i=0; i<schemaMatrice.length; i++) {
+				if (schemaMatrice[i][colSel]== null) {
+					emptySpaces++;
+				}
 			}
-		 }
+			System.out.println("La colonna ha"+emptySpaces+" spazi vuoti");
+			return emptySpaces;
 		}
-		return emptySpacesPercolumn;
-	}
-	
-	public static void fillcolumn {
-		//questo metodo deve ricevere il numero di carte, e deve verificare se quella colonna è libera
+
+		
+		public int nTile () {
+			int TileDaInserire;
+			do {
+			Scanner sc= new Scanner(System.in);
+			System.out.println("quante carte vuoi inserire? (compreso tra 1 e 3)");
+			TileDaInserire=sc.nextInt();
+			
+			if(TileDaInserire<1 && TileDaInserire>3) {
+				System.out.println("per le regole del gioco, si possono raccogliere solo Tile da 1 a 3");
+				sc.close();
+			}
+			}while(TileDaInserire<1 && TileDaInserire>3);
+			
+			return TileDaInserire;
+		}
 		
 	}
-	
+	//possiamo sviluppare metodi che data una colonna ti restituiscano gli spazi vuoti, con gli oppptuni controlli
 	
 	
 	
@@ -78,4 +91,3 @@ public class Bookshelf {
 	}
 	*/
 	
-}
