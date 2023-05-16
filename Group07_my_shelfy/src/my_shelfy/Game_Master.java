@@ -19,7 +19,7 @@ public class Game_Master
 									{5, 5, 3, 2, 2, 2, 3, 5, 5}, 
 									{5, 5, 5, 4, 2, 2, 5, 5, 5}, 
 									{5, 5, 5, 5, 4, 3, 5, 5, 5}};
-		int n_players = 0;
+		int nPlayers = 0;
 
 	// chiedere come riempire piu facilmente il tavolo da gioco senza contare casella per casella
 		Game_Master()
@@ -31,7 +31,7 @@ public class Game_Master
 	boolean is_tile_accessible(int _x, int _y)
 
 	{
-			if(accessible_tiles[_x][_y] <= n_players) 
+			if(accessible_tiles[_x][_y] <= nPlayers) 
 			{
 				return true;
 			}	
@@ -41,7 +41,7 @@ public class Game_Master
 	
 		void set_players(int _in)
 		{
-			n_players = _in;
+			nPlayers = _in;
 		}
 		
 	
