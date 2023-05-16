@@ -4,14 +4,32 @@ import java.util.*;
 public class Bookshelf {
 	private int rows=5;
 	private int columns=4;
-	 private
-	    Bookshelf[][] schemaMatrice = new Bookshelf[rows][columns];
+	private int LimiteCarte=3;
+	private int [] conteggioCarte;
+	 private String[][] schemaMatrice = new String[rows][columns];
 	
 	public Bookshelf() // Bookshelf constructor, initializing private rows and columns
 	{
 		for (int i = 0; i < rows; ++i)
 			for (int j = 0; j < columns; ++j)
-				schemaMatrice[i][j] = new Bookshelf();
+				schemaMatrice[i][j] = new String();
+	}
+	public void StampaMatrice() {
+		for(int riga = 0; riga<rows; riga++) {
+			for(int colonna = 0; colonna< columns; colonna++) {
+				System.out.println(schemaMatrice[riga][colonna]+ " ");
+			}
+			System.out.println();
+	    }
+		System.out.println();
+	}
+	
+	public void inizializzaMatrice() {
+		for(int riga = 0; riga<rows; riga++) {
+			for(int colonna = 0; colonna< columns; colonna++) {
+				schemaMatrice[riga][colonna]= "-";
+			}
+		}
 	}
 	
 	public int getColumns(){
@@ -28,19 +46,17 @@ public class Bookshelf {
 		}while(colSel<rows && colSel>columns);
 		
 		return colSel;	
-	}
+	    }		
 		
-		
-		public int countEmptyspace (Bookshelf[][] schemaMatrice, int colSel) {
+		public int countEmptyspace (String[][] schemaMatrice, int colSel) {
 			int emptySpaces=0;
 			
 			for(int i=0; i<schemaMatrice.length; i++) {
-				if (schemaMatrice[i][colSel]== null) {
+				if (schemaMatrice[i][colSel]== "-") {
 					emptySpaces++;
 				}
 			}
-			System.out.println("La colonna ha"+emptySpaces+" spazi vuoti");
-			return emptySpaces;
+			return emptySpaces;	
 		}
 
 		
@@ -59,35 +75,5 @@ public class Bookshelf {
 			
 			return TileDaInserire;
 		}
-		
-	}
-	//possiamo sviluppare metodi che data una colonna ti restituiscano gli spazi vuoti, con gli oppptuni controlli
-	
-	
-	
-	
-    /*
-	public static List<int[]> getFreePositions(Bookshelf[][] schemaMatrice){
-		List<int[]> freePositions = new ArrayList<>();
-		
-		for(int i=0; i< rows; i-- ) {
-			
-			
 		}
-	}
-
-	*/
-	
-	
-	
-	
-	/*
-	public static void fillColumns(Bookshelf[][] schemaMatrice , int colSel ) {
 		
-		for(int i=0; i<rows; i++) {
-			if(rows[i])
-			schemaMatrice[i][colSel]
-		}
-	}
-	*/
-	
