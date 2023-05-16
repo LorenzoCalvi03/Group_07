@@ -48,7 +48,8 @@ public class Bookshelf {
 		return colSel;	
 	    }		
 		
-		public int countEmptyspace (String[][] schemaMatrice, int colSel) {
+     public int countEmptyspace () {
+			int colSel=getColumns();
 			int emptySpaces=0;
 			
 			for(int i=0; i<schemaMatrice.length; i++) {
@@ -58,9 +59,7 @@ public class Bookshelf {
 			}
 			return emptySpaces;	
 		}
-
-		
-		public int nTile () {
+      public int nTile () {
 			int TileDaInserire;
 			do {
 			Scanner sc= new Scanner(System.in);
