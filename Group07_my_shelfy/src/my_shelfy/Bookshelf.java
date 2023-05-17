@@ -4,14 +4,32 @@ import java.util.*;
 public class Bookshelf {
 	private int rows=5;
 	private int columns=4;
-	 private
-	    Bookshelf[][] schemaMatrice = new Bookshelf[rows][columns];
+	private int LimiteCarte=3;
+	private int [] conteggioCarte;
+	 private String[][] schemaMatrice = new String[rows][columns];
 	
 	public Bookshelf() // Bookshelf constructor, initializing private rows and columns
 	{
 		for (int i = 0; i < rows; ++i)
 			for (int j = 0; j < columns; ++j)
-				schemaMatrice[i][j] = new Bookshelf();
+				schemaMatrice[i][j] = new String();
+	}
+	public void StampaMatrice() {
+		for(int riga = 0; riga<rows; riga++) {
+			for(int colonna = 0; colonna< columns; colonna++) {
+				System.out.println(schemaMatrice[riga][colonna]+ " ");
+			}
+			System.out.println();
+	    }
+		System.out.println();
+	}
+	
+	public void inizializzaMatrice() {
+		for(int riga = 0; riga<rows; riga++) {
+			for(int colonna = 0; colonna< columns; colonna++) {
+				schemaMatrice[riga][colonna]= "-";
+			}
+		}
 	}
 	
 	public int getColumns(){
@@ -28,54 +46,33 @@ public class Bookshelf {
 		}while(colSel<rows && colSel>columns);
 		
 		return colSel;	
+	    }		
 		
-	}
-	
-	public static int[] countEmptyspacePercolumn (Bookshelf[][] schemaMatrice) {
-		int[] emptySpacesPercolumn = new int[schemaMatrice[0].length];
-		for(int col=0; col<schemaMatrice[0].length;col++) {
-			for(int row=0; row<schemaMatrice.length; row++) {
-			if (schemaMatrice[row][col]== null) {
-		    System.out.println("La colonna"+col+"ha"+emptySpacesPercolumn+" spazi vuoti");
-				emptySpacesPercolumn[col]++;
+     public int countEmptyspace () {
+			int colSel=getColumns();
+			int emptySpaces=0;
+			
+			for(int i=0; i<schemaMatrice.length; i++) {
+				if (schemaMatrice[i][colSel]== "-") {
+					emptySpaces++;
+				}
 			}
-		 }
+			return emptySpaces;	
 		}
-		return emptySpacesPercolumn;
-	}
-	
-	public static void fillcolumn {
-		//questo metodo deve ricevere il numero di carte, e deve verificare se quella colonna è libera
-		
-	}
-	
-	
-	
-	
-	
-    /*
-	public static List<int[]> getFreePositions(Bookshelf[][] schemaMatrice){
-		List<int[]> freePositions = new ArrayList<>();
-		
-		for(int i=0; i< rows; i-- ) {
+      public int nTile () {
+			int TileDaInserire;
+			do {
+			Scanner sc= new Scanner(System.in);
+			System.out.println("quante carte vuoi inserire? (compreso tra 1 e 3)");
+			TileDaInserire=sc.nextInt();
 			
+			if(TileDaInserire<1 && TileDaInserire>3) {
+				System.out.println("per le regole del gioco, si possono raccogliere solo Tile da 1 a 3");
+				sc.close();
+			}
+			}while(TileDaInserire<1 && TileDaInserire>3);
 			
+			return TileDaInserire;
 		}
-	}
-
-	*/
-	
-	
-	
-	
-	/*
-	public static void fillColumns(Bookshelf[][] schemaMatrice , int colSel ) {
+		}
 		
-		for(int i=0; i<rows; i++) {
-			if(rows[i])
-			schemaMatrice[i][colSel]
-		}
-	}
-	*/
-	
-}
