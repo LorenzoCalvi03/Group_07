@@ -8,11 +8,11 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		Board board = new Board();
 		System.out.println("Quanti giocatori siete?: ");
-		Game_Master.g.set_players(sc.nextInt());
+		GameMaster.g.set_players(sc.nextInt());
 		board.fill();
 
-		for (int i = 0; i < Game_Master.g.cols; ++i) {
-			for (int j = 0; j < Game_Master.g.rows; ++j) {
+		for (int i = 0; i < GameMaster.g.cols; ++i) {
+			for (int j = 0; j < GameMaster.g.rows; ++j) {
 				if(board.getTile(i, j) != null) {
 					System.out.print(board.getTile(i, j).toString()+"\t");
 				}
