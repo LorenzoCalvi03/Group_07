@@ -1,4 +1,4 @@
-package my_shelfy;
+package tile;
 
 public class Tile {
 		private Type type;

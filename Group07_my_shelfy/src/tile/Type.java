@@ -1,4 +1,4 @@
-package my_shelfy;
+package tile;
 /** Questo enumerativo offre i 6 tipi di tessera
  * 
  * @author Filippo Bonfanti

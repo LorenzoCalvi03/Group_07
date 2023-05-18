@@ -1,6 +1,8 @@
-package my_shelfy;
+package my_shelfie;
 
 import java.util.*;
+
+import components.Board;
 
 public class Main {
 

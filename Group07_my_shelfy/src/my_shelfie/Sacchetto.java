@@ -1,7 +1,10 @@
-package my_shelfy;
+package my_shelfie;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import tile.Tile;
+import tile.Type;
 
 public class Sacchetto {
 	public static ArrayList<Tile> sacchetto = new ArrayList<Tile>();

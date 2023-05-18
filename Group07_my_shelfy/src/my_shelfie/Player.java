@@ -1,4 +1,6 @@
-package my_shelfy;
+package my_shelfie;
+
+import components.Bookshelf;
 
 public class Player {
 	private int points;

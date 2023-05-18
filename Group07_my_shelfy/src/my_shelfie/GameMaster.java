@@ -1,4 +1,4 @@
-package my_shelfy;
+package my_shelfie;
 
 public class GameMaster {
 
@@ -34,8 +34,29 @@ public class GameMaster {
 		}
 	
 
+	public int getCols() {
+		return cols;
+	}
+
+
+	public void setCols(int cols) {
+		this.cols = cols;
+	}
+
+
+	public int getRows() {
+		return rows;
+	}
+
+
+	public void setRows(int rows) {
+		this.rows = rows;
+	}
+
+
 	void set_players(int _in) {
 		nPlayers = _in;
 	}
+	
 
 }

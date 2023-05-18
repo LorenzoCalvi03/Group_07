@@ -1,4 +1,4 @@
-package my_shelfy;
+package components;
 import java.util.*;
 
 public class Bookshelf {
@@ -6,7 +6,7 @@ public class Bookshelf {
 	private int columns=4;
 	private int LimiteCarte=3;
 	private int [] conteggioCarte;
-	 private String[][] schemaMatrice = new String[rows][columns];
+	private String[][] schemaMatrice = new String[rows][columns];
 	
 	public Bookshelf() // Bookshelf constructor, initializing private rows and columns
 	{
