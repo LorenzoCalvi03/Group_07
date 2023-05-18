@@ -42,10 +42,11 @@ public class Sacchetto {
 
 	public static Tile pescaTessera() {
 		Random r = new Random();
-		int position = 10;
+		int position = r.nextInt(sacchetto.size());
 		Tile t = new Tile(sacchetto.get(position));
 		sacchetto.remove(position);
 		return t;
+		//sacchetto.
 	}
 
 }
