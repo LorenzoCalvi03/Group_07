@@ -66,11 +66,11 @@ public class Bookshelf {
 			System.out.println("quante carte vuoi inserire? (compreso tra 1 e 3)");
 			TileDaInserire=sc.nextInt();
 			
-			if(TileDaInserire<1 && TileDaInserire>3) {
+			if(TileDaInserire<1 || TileDaInserire>3) {
 				System.out.println("per le regole del gioco, si possono raccogliere solo Tile da 1 a 3");
 				sc.close();
 			}
-			}while(TileDaInserire<1 && TileDaInserire>3);
+			}while(TileDaInserire<1 || TileDaInserire>3);
 			
 			return TileDaInserire;
 		}
