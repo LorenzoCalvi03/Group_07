@@ -10,32 +10,32 @@ public class Sacchetto {
 	public Sacchetto() {
 		for (int i = 0; i < MAX_TILES; i++) {
 			Tile t = new Tile();
-			t.setType(Type.BOOK);
+			t.setType(Type.PINK);
 			sacchetto.add(t);
 		}
 		for (int i = 0; i < MAX_TILES; i++) {
 			Tile t = new Tile();
-			t.setType(Type.CAT);
+			t.setType(Type.BLUE);
 			sacchetto.add(t);
 		}
 		for (int i = 0; i < MAX_TILES; i++) {
 			Tile t = new Tile();
-			t.setType(Type.FRAME);
+			t.setType(Type.GREEN);
 			sacchetto.add(t);
 		}
 		for (int i = 0; i < MAX_TILES; i++) {
 			Tile t = new Tile();
-			t.setType(Type.GAME);
+			t.setType(Type.WHITE);
 			sacchetto.add(t);
 		}
 		for (int i = 0; i < MAX_TILES; i++) {
 			Tile t = new Tile();
-			t.setType(Type.PLANT);
+			t.setType(Type.AZURE);
 			sacchetto.add(t);
 		}
 		for (int i = 0; i < MAX_TILES; i++) {
 			Tile t = new Tile();
-			t.setType(Type.TROPHIE);
+			t.setType(Type.ORANGE);
 			sacchetto.add(t);
 		}
 	}
