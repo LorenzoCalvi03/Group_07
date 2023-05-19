@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Six_groups_of_2_tiles {
     public boolean checkMatrix(String[][] inMatrix) {

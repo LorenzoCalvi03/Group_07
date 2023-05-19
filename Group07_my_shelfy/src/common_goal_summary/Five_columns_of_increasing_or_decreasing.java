@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Five_columns_of_increasing_or_decreasing {
     public boolean checkColumns(String[][] matrix) {

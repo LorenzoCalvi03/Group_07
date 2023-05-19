@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Three_columns_of_6_tiles {
     public boolean checkColumns(String[][] in_matrix) {

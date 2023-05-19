@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Four_tiles_in_the_four_corners {
     public boolean checkMatrix(String[][] in_matrix) {

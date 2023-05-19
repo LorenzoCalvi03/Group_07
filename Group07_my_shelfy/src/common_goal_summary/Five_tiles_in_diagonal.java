@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Five_tiles_in_diagonal {
     public boolean check_diagonal(String[][] matrix) {

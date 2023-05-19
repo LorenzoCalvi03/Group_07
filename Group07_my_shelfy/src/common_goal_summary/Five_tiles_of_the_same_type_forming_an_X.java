@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Five_tiles_of_the_same_type_forming_an_X {
     public boolean checkMatrix(String[][] matrix) {

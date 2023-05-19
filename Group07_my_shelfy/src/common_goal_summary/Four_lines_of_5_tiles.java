@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Four_lines_of_5_tiles {
     public boolean check_lines(String[][] matrix) {

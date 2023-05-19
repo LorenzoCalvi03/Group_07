@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Four_groups_of_4_tiles {
     public boolean check_matrix(String[][] in_matrix) {

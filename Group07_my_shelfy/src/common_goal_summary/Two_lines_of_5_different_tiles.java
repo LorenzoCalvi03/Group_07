@@ -1,4 +1,4 @@
-package Common_goals_summary;
+package common_goal_summary;
 
 public class Two_lines_of_5_different_tiles {
     public boolean checkLines(String[][] in_matrix) {
