@@ -7,7 +7,7 @@ private static String[][] matrix = new String[6][5];
 	public TileObject(int n){
 		switch(n) {
 		case 1 :
-			matrix=Personal1;
+			matrix=Personal1;//Da aggiungere System.out.println
 			break;
 		case 2 :
 			matrix=Personal2;

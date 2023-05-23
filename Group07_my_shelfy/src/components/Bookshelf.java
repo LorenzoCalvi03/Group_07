@@ -93,4 +93,40 @@ public class Bookshelf {
 			}
 			return emptySpaces;	
 		}
-		}
+      public int TileAdjacent() {
+    		    // Controlla le tessere adiacenti orizzontalmente
+    	  int contatore=0;
+    		    for (int riga = 0; riga < rows; riga++) {
+    		        for (int colonna = 0; colonna < columns - 1; colonna++) {
+    		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
+    		            Tile tesseraSuccessiva = schemaMatrice[riga][colonna + 1];
+    		            if (tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null) {
+    		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
+    		                	contatore++;
+    		                    return contatore; // Trovate tessere adiacenti dello stesso tipo
+    		                }
+    		            }
+    		        }
+    		    }
+
+    		    // Controlla le tessere adiacenti verticalmente
+    		    for (int riga = 0; riga < rows - 1; riga++) {
+    		        for (int colonna = 0; colonna < columns; colonna++) {
+    		        	Tile tilePrevious = schemaMatrice [riga][colonna - 1 ];
+    		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
+    		            Tile tesseraSuccessiva = schemaMatrice[riga + 1][colonna];
+    		            if (tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null && tilePrevious.getType() != null) {
+    		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
+    		                	contatore++;
+    		                    return contatore; // Trovate tessere adiacenti dello stesso tipo
+    		                }
+    		            }
+    		        }
+    		    }
+
+    		    return 0; // Non sono state trovate tessere adiacenti dello stesso tipo
+    	  
+      }
+}
+
+      
