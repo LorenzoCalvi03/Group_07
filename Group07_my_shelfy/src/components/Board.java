@@ -20,7 +20,7 @@ public class Board {
 	public void fill() {
 		for (int i = 0; i < GameMaster.g.getCols(); ++i)
 			for (int j = 0; j < GameMaster.g.getRows(); ++j) {
-				if (GameMaster.g.isTileAccessible(i, j)) {
+				if (GameMaster.g.isTileAccessible(i, j) && playGround[i][j].getType()==null) {
 					playGround[i][j] = Sacchetto.pescaTessera();
 				}
 			}
