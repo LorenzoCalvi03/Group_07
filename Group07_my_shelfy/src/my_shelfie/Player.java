@@ -29,21 +29,29 @@ public class Player {
 	 * 
 	 * }
 	 */
-
-	/*
-	 * public void turno() {
-	 * 
-	 * }
-	 */
-	public boolean finePartita() {
-		boolean finito=false;
-		if(this.shelf.countEmptyspace()>0) {
-			finito=false;}
-		
-		else {
-			finito=true;
+	public void turno() {
+		while (this.finePartita() != true) {
+			
 		}
+	}
+
+	public boolean finePartita() {
+		boolean finito = false;
+		if (this.shelf.countEmptyspace() > 0) {
+			finito = false;
+		}
+
+		else {
+			finito = true;
+		}
+
+		return finito;
+	}
+	
+	public void pescaCarte(int cord[][]) {
 		
-	 return finito;
-}
-}
+		
+		
+		}
+	}
+
