@@ -40,11 +40,11 @@ public class Bookshelf {
 		System.out.println("In che colonna vuoi inserire le carte?");
 		colSel=sc.nextInt();// per colSel s'intende la colonna selezionata dal giocatore
 		
-		if(colSel<rows && colSel>columns) {
+		if(colSel<0 || colSel>4) {
 			System.out.println("Colonna inesistente, seleziona una colonna giusta");
 			sc.close();
 		}
-		}while(colSel<rows && colSel>columns);
+		}while(colSel<0 || colSel>4);
 		
 		return colSel;	
 	    }		
