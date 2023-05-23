@@ -18,7 +18,6 @@ public enum Type {	//enumerativo per i 6 tipi di tessera oggetto
 		switch (this) {
 		case PINK:
 			return "PINK";
-		
 		case BLUE:
 			return "BLUE";
 			
