@@ -75,4 +75,19 @@ public class Bookshelf {
 			
 			return TileDaInserire;
 		}
+     public boolean emptySpace () {
+ 			boolean emptySpaces=true;
+ 			
+ 			for(int i=0; i<schemaMatrice.length; i++) {
+ 				for(int j=0;i<schemaMatrice[0].length;j++) {
+
+ 				if (schemaMatrice[i][j].getType()==null ) {
+ 					emptySpaces=true;
+ 				}else {
+ 					return false;
+ 				}
+ 				}
+ 			}
+ 			return emptySpaces;	
+ 		}
 		}

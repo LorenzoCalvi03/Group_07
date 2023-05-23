@@ -8,6 +8,7 @@ public class Player {
 	private Bookshelf shelf;
 	// private Personalgoal personal;
 	private int turno;
+	private boolean finito=false;
 
 	public Player() {
 		if (COUNTER < 4) {
@@ -23,6 +24,7 @@ public class Player {
 	public int getPoint() {
 		return this.points;
 	}
+
 	/*
 	 * public void incrementaPunti() { int point=this.points //
 	 * point=personal.getpoint;; this.points=
@@ -30,28 +32,28 @@ public class Player {
 	 * }
 	 */
 	public void turno() {
+
 		while (this.finePartita() != true) {
-			
+
 		}
 	}
 
 	public boolean finePartita() {
-		boolean finito = false;
 		if (this.shelf.countEmptyspace() > 0) {
-			finito = false;
+			this.finito = false;
 		}
 
 		else {
-			finito = true;
+			this.finito = true;
 		}
 
 		return finito;
 	}
-	
-	public void pescaCarte(int cord[][]) {
-		
-		
-		
-		}
-	}
 
+	public void pescaCarte(int cord[][]) {
+		int ncolonna = 0;
+		int nTile = 0;
+		ncolonna = shelf.getColumns();
+		nTile = shelf.nTile();
+	}
+}
