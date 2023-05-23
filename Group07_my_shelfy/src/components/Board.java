@@ -25,6 +25,12 @@ public class Board {
 	public Tile getTile(int _x, int _y) {
 		return playGround[_x][_y];
 	}
+	
+	public Tile pescaTile(int x, int y) {
+		Tile t = new Tile(playGround[x][y]);
+		this.playGround[x][y].setType(null);
+		return t;
+	}
 
 	public boolean puoPescare(int x, int y) {
 		if (this.playGround[x][y] != null) {
