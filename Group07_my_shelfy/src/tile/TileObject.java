@@ -24,6 +24,24 @@ private static String[][] matrix = new String[6][5];
 		case 6 :
 			matrix=Personal6;
 			break;	
+		case 7 :
+			matrix=Personal7;
+			break;
+		case 8 :
+			matrix=Personal8;
+			break;
+		case 9 :
+			matrix=Personal9;
+			break;
+		case 10 :
+			matrix=Personal10;
+			break;
+		case 11 :
+			matrix=Personal11;
+			break;
+		case 12 :
+			matrix=Personal12;
+			break;
 		}
 	
 	}
