@@ -1,15 +1,11 @@
 package components;
 
-import java.util.*;
-
 import my_shelfie.GameMaster;
 import my_shelfie.Sacchetto;
 import tile.Tile;
 
 public class Board {
 	private Tile[][] playGround = new Tile[GameMaster.g.getCols()][GameMaster.g.getRows()];
-	private Sacchetto s = new Sacchetto();
-
 	public Board() {// Board constructor, initializing private members
 		for (int i = 0; i < GameMaster.g.getCols(); ++i)
 			for (int j = 0; j < GameMaster.g.getRows(); ++j)

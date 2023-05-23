@@ -2,23 +2,25 @@
 package components;
 import java.util.*;
 
+import tile.Tile;
+
 public class Bookshelf {
 	private int rows=5;
 	private int columns=4;
 	private int LimiteCarte=3;
 	private int [] conteggioCarte;
-	private String[][] schemaMatrice = new String[rows][columns];
+	private Tile[][] schemaMatrice = new Tile[rows][columns];
 	
 	public Bookshelf() // Bookshelf constructor, initializing private rows and columns
 	{
 		for (int i = 0; i < rows; ++i)
 			for (int j = 0; j < columns; ++j)
-				schemaMatrice[i][j] = new String();
+				schemaMatrice[i][j] = new Tile();
 	}
 	public void StampaMatrice() {
 		for(int riga = 0; riga<rows; riga++) {
 			for(int colonna = 0; colonna< columns; colonna++) {
-				System.out.println(schemaMatrice[riga][colonna]+ " ");
+				System.out.println(schemaMatrice[riga][colonna].toString());
 			}
 			System.out.println();
 	    }
@@ -28,7 +30,7 @@ public class Bookshelf {
 	public void inizializzaMatrice() {
 		for(int riga = 0; riga<rows; riga++) {
 			for(int colonna = 0; colonna< columns; colonna++) {
-				schemaMatrice[riga][colonna]= "-";
+				schemaMatrice[riga][colonna]= new Tile();
 			}
 		}
 	}
@@ -54,7 +56,7 @@ public class Bookshelf {
 			int emptySpaces=0;
 			
 			for(int i=0; i<schemaMatrice.length; i++) {
-				if (schemaMatrice[i][colSel]== "-") {
+				if (schemaMatrice[i][colSel].getType()==null) {
 					emptySpaces++;
 				}
 			}
@@ -75,19 +77,20 @@ public class Bookshelf {
 			
 			return TileDaInserire;
 		}
-     public boolean emptySpace () {
- 			boolean emptySpaces=true;
- 			
- 			for(int i=0; i<schemaMatrice.length; i++) {
- 				for(int j=0;i<schemaMatrice[0].length;j++) {
+      
+      public boolean emptySpace () {
+			boolean emptySpaces=true;
+			
+			for(int i=0; i<schemaMatrice.length; i++) {
+				for(int j=0;i<schemaMatrice[0].length;j++) {
 
- 				if (schemaMatrice[i][j].getType()==null ) {
- 					emptySpaces=true;
- 				}else {
- 					return false;
- 				}
- 				}
- 			}
- 			return emptySpaces;	
- 		}
+				if (schemaMatrice[i][j].getType()==null ) {
+					emptySpaces=true;
+				}else {
+					return false;
+				}
+				}
+			}
+			return emptySpaces;	
+		}
 		}
