@@ -4,8 +4,10 @@ import my_shelfie.GameMaster;
 import my_shelfie.Sacchetto;
 import tile.Tile;
 
-public class Board {
-	private Tile[][] playGround = new Tile[GameMaster.g.getCols()][GameMaster.g.getRows()];
+public   class  Board {
+	Sacchetto s = new Sacchetto();
+	public static Tile[][] playGround = new Tile[GameMaster.g.getCols()][GameMaster.g.getRows()];
+	public static Board b = new Board();
 	public Board() {// Board constructor, initializing private members
 		for (int i = 0; i < GameMaster.g.getCols(); ++i)
 			for (int j = 0; j < GameMaster.g.getRows(); ++j)
@@ -26,9 +28,9 @@ public class Board {
 		return playGround[_x][_y];
 	}
 	
-	public Tile pescaTile(int x, int y) {
+	public static Tile pescaTile(int x, int y) {
 		Tile t = new Tile(playGround[x][y]);
-		this.playGround[x][y].setType(null);
+		playGround[x][y].setType(null);
 		return t;
 	}
 

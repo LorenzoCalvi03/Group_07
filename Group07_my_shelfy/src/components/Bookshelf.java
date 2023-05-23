@@ -96,4 +96,43 @@ public class Bookshelf {
 		}
 		return emptySpaces;
 	}
+
+      public int TileAdjacent() {
+    		    // Controlla le tessere adiacenti orizzontalmente
+    	  int contatore=0;
+    	  boolean [][] visited= new boolean [rows][columns];
+    		    for (int riga = 0; riga < rows; riga++) {
+    		        for (int colonna = 0; colonna < columns - 1; colonna++) {
+    		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
+    		            Tile tesseraSuccessiva = schemaMatrice[riga][colonna + 1];
+    		            if ((!visited [riga][colonna])&& (!visited [riga][colonna+1])&&(tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null)) {
+    		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
+    		                	contatore++;
+    		                	visited [riga][colonna]= true;
+    		                	visited [riga][colonna+1]= true;
+    		                }
+    		            }
+    		        }
+    		    }
+
+    		    // Controlla le tessere adiacenti verticalmente
+    		    for (int riga = 0; riga < rows - 1; riga++) {
+    		        for (int colonna = 0; colonna < columns; colonna++) {
+    		        	Tile tilePrevious = schemaMatrice [riga][colonna - 1 ];
+    		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
+    		            Tile tesseraSuccessiva = schemaMatrice[riga + 1][colonna];
+    		            if ((!visited [riga][colonna])&& (!visited [riga+1][colonna])&&(tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null && tilePrevious.getType() != null)) {
+    		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
+    		                	contatore++;
+    		                	visited [riga][colonna]= true;
+    		                	visited [riga+1][colonna]= true;
+    		                }
+    		            }
+    		        }
+    		    }
+
+    		    return contatore; // Non sono state trovate tessere adiacenti dello stesso tipo
+    	  
+      }
 }
+
