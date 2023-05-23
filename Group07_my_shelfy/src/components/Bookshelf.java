@@ -96,14 +96,16 @@ public class Bookshelf {
       public int TileAdjacent() {
     		    // Controlla le tessere adiacenti orizzontalmente
     	  int contatore=0;
+    	  boolean [][] visited= new boolean [rows][columns];
     		    for (int riga = 0; riga < rows; riga++) {
     		        for (int colonna = 0; colonna < columns - 1; colonna++) {
     		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
     		            Tile tesseraSuccessiva = schemaMatrice[riga][colonna + 1];
-    		            if (tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null) {
+    		            if ((!visited [riga][colonna])&& (!visited [riga][colonna+1])&&(tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null)) {
     		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
     		                	contatore++;
-    		                    return contatore; // Trovate tessere adiacenti dello stesso tipo
+    		                	visited [riga][colonna]= true;
+    		                	visited [riga][colonna+1]= true;
     		                }
     		            }
     		        }
@@ -115,16 +117,17 @@ public class Bookshelf {
     		        	Tile tilePrevious = schemaMatrice [riga][colonna - 1 ];
     		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
     		            Tile tesseraSuccessiva = schemaMatrice[riga + 1][colonna];
-    		            if (tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null && tilePrevious.getType() != null) {
+    		            if ((!visited [riga][colonna])&& (!visited [riga+1][colonna])&&(tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null && tilePrevious.getType() != null)) {
     		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
     		                	contatore++;
-    		                    return contatore; // Trovate tessere adiacenti dello stesso tipo
+    		                	visited [riga][colonna]= true;
+    		                	visited [riga+1][colonna]= true;
     		                }
     		            }
     		        }
     		    }
 
-    		    return 0; // Non sono state trovate tessere adiacenti dello stesso tipo
+    		    return contatore; // Non sono state trovate tessere adiacenti dello stesso tipo
     	  
       }
 }
