@@ -1,6 +1,10 @@
 package my_shelfie;
 
+import java.util.Scanner;
+
+import components.Board;
 import components.Bookshelf;
+import tile.Tile;
 
 public class Player {
 	private int points;
@@ -39,7 +43,7 @@ public class Player {
 	}
 
 	public boolean finePartita() {
-		if (this.shelf.countEmptyspace() > 0) {
+		if (this.shelf.emptySpace()) {
 			this.finito = false;
 		}
 
@@ -47,13 +51,21 @@ public class Player {
 			this.finito = true;
 		}
 
-		return finito;
+		return this.finito;
 	}
 
-	public void pescaCarte(int cord[][]) {
-		int ncolonna = 0;
-		int nTile = 0;
-		ncolonna = shelf.getColumns();
-		nTile = shelf.nTile();
+	public void pescaCarte() {
+		int ncarte=this.shelf.nTile();
+		int x=0,y=0;
+		Scanner sc= new Scanner(System.in);
+	for(int i=0;i<ncarte;i++){
+		System.out.println("dammi l'ordinata della x della carta da pescare");
+		x=sc.nextInt();
+		System.out.println("dammi l'ordinata della y della carta da pescare");
+		y=sc.nextInt();
+		Tile t=new Tile(Board.b.pescaTile(x,y));
+	
+		
+	}
 	}
 }
