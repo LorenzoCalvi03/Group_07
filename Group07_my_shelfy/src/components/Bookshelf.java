@@ -158,4 +158,15 @@ public class Bookshelf {
 
 	}
 
+	public void inserisciTile(int colSel,Tile t) {
+		Scanner sc = new Scanner(System.in);
+		int riga;
+			this.StampaMatrice();
+			System.out.println("Scegli in che riga inserire la tessera ");
+			riga = sc.nextInt();
+			schemaMatrice[riga-1][colSel] = t;
+			sc.close();
+
+	}
+
 }
