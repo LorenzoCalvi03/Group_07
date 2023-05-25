@@ -68,8 +68,9 @@ public class Player {
 	}
 
 	public void pescaCarte() {
-		int ncarte=this.shelf.nTile();
-		int x=0,y=0;
+		int colSel=shelf.getColumns();
+		int ncarte=this.shelf.nTile(colSel);
+		int x=0,y=0,colonna=0;;
 		Scanner sc= new Scanner(System.in);
 	for(int i=0;i<ncarte;i++){
 		System.out.println("dammi l'ordinata della x della carta da pescare");
@@ -77,9 +78,13 @@ public class Player {
 		System.out.println("dammi l'ordinata della y della carta da pescare");
 		y=sc.nextInt();
 		Tile t=new Tile(Board.b.pescaTile(x,y));
+		  
+		
 		}
 		
 	}
+	
+	
 	
 	@Override
 	public String toString() {

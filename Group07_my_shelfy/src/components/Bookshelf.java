@@ -53,8 +53,8 @@ public class Bookshelf {
 		return colSel;
 	}
 
-	public int countEmptyspace() {
-		int colSel = getColumns();
+	public int countEmptyspace(int colSel) {
+
 		int emptySpaces = 0;
 
 		for (int i = 0; i < schemaMatrice.length; i++) {
@@ -65,9 +65,33 @@ public class Bookshelf {
 		return emptySpaces;
 	}
 
-	public int nTile() {
-		int TileDaInserire;
+	public int nTile(int colSel) {
+		int TileDaInserire = 0;
 		do {
+
+			do {
+				TileDaInserire=this.scegliSpazi();
+
+			} while (TileDaInserire < 1 || TileDaInserire > 3);
+			if (countEmptyspace(colSel) > TileDaInserire) {
+				Scanner sc= new Scanner(System.in);
+				int scelta=0;
+					System.out.println("Numero di spazi non disponibili ");
+					System.out.println("Decidi se cambiare colonna premendo 1 o quanti spazi da inserire premendo 2  ");
+					scelta=sc.nextInt();
+					if(scelta>1){
+						TileDaInserire=this.scegliSpazi();
+					}
+					else{
+						colSel=this.getColumns();
+					}
+			}
+			
+		} while (countEmptyspace(colSel) < TileDaInserire);
+		return TileDaInserire;
+	}
+		public int scegliSpazi() {
+			int TileDaInserire;
 			Scanner sc = new Scanner(System.in);
 			System.out.println("quante carte vuoi inserire? (compreso tra 1 e 3)");
 			TileDaInserire = sc.nextInt();
@@ -76,11 +100,8 @@ public class Bookshelf {
 				System.out.println("per le regole del gioco, si possono raccogliere solo Tile da 1 a 3");
 				sc.close();
 			}
-		} while (TileDaInserire < 1 || TileDaInserire > 3);
-
-		return TileDaInserire;
-	}
-
+			return TileDaInserire;
+		}
 	public boolean emptySpace() {
 		boolean emptySpaces = true;
 
@@ -97,42 +118,44 @@ public class Bookshelf {
 		return emptySpaces;
 	}
 
-      public int TileAdjacent() {
-    		    // Controlla le tessere adiacenti orizzontalmente
-    	  int contatore=0;
-    	  boolean [][] visited= new boolean [rows][columns];
-    		    for (int riga = 0; riga < rows; riga++) {
-    		        for (int colonna = 0; colonna < columns - 1; colonna++) {
-    		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
-    		            Tile tesseraSuccessiva = schemaMatrice[riga][colonna + 1];
-    		            if ((!visited [riga][colonna])&& (!visited [riga][colonna+1])&&(tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null)) {
-    		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
-    		                	contatore++;
-    		                	visited [riga][colonna]= true;
-    		                	visited [riga][colonna+1]= true;
-    		                }
-    		            }
-    		        }
-    		    }
+	public int TileAdjacent() {
+		// Controlla le tessere adiacenti orizzontalmente
+		int contatore = 0;
+		boolean[][] visited = new boolean[rows][columns];
+		for (int riga = 0; riga < rows; riga++) {
+			for (int colonna = 0; colonna < columns - 1; colonna++) {
+				Tile tesseraCorrente = schemaMatrice[riga][colonna];
+				Tile tesseraSuccessiva = schemaMatrice[riga][colonna + 1];
+				if ((!visited[riga][colonna]) && (!visited[riga][colonna + 1])
+						&& (tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null)) {
+					if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
+						contatore++;
+						visited[riga][colonna] = true;
+						visited[riga][colonna + 1] = true;
+					}
+				}
+			}
+		}
 
-    		    // Controlla le tessere adiacenti verticalmente
-    		    for (int riga = 0; riga < rows - 1; riga++) {
-    		        for (int colonna = 0; colonna < columns; colonna++) {
-    		        	Tile tilePrevious = schemaMatrice [riga][colonna - 1 ];
-    		            Tile tesseraCorrente = schemaMatrice[riga][colonna];
-    		            Tile tesseraSuccessiva = schemaMatrice[riga + 1][colonna];
-    		            if ((!visited [riga][colonna])&& (!visited [riga+1][colonna])&&(tesseraCorrente.getType() != null && tesseraSuccessiva.getType() != null && tilePrevious.getType() != null)) {
-    		                if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
-    		                	contatore++;
-    		                	visited [riga][colonna]= true;
-    		                	visited [riga+1][colonna]= true;
-    		                }
-    		            }
-    		        }
-    		    }
+		// Controlla le tessere adiacenti verticalmente
+		for (int riga = 0; riga < rows - 1; riga++) {
+			for (int colonna = 0; colonna < columns; colonna++) {
+				Tile tilePrevious = schemaMatrice[riga][colonna - 1];
+				Tile tesseraCorrente = schemaMatrice[riga][colonna];
+				Tile tesseraSuccessiva = schemaMatrice[riga + 1][colonna];
+				if ((!visited[riga][colonna]) && (!visited[riga + 1][colonna]) && (tesseraCorrente.getType() != null
+						&& tesseraSuccessiva.getType() != null && tilePrevious.getType() != null)) {
+					if (tesseraCorrente.getType().equals(tesseraSuccessiva.getType())) {
+						contatore++;
+						visited[riga][colonna] = true;
+						visited[riga + 1][colonna] = true;
+					}
+				}
+			}
+		}
 
-    		    return contatore; // Non sono state trovate tessere adiacenti dello stesso tipo
-    	  
-      }
+		return contatore; // Non sono state trovate tessere adiacenti dello stesso tipo
+
+	}
+
 }
-

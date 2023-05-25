@@ -64,4 +64,10 @@ public   class  Board {
 			return false;
 		}
 	}
+	
+	public void inserisciTile(Tile t,int x) {
+		
+		
+		
+	}
 }
