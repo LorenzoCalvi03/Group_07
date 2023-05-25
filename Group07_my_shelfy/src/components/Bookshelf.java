@@ -6,8 +6,8 @@ import java.util.*;
 import tile.Tile;
 
 public class Bookshelf {
-	private int rows = 5;
-	private int columns = 4;
+	private int rows = 6;
+	private int columns = 5;
 	private int LimiteCarte = 3;
 	private int[] conteggioCarte;
 	private Tile[][] schemaMatrice = new Tile[rows][columns];

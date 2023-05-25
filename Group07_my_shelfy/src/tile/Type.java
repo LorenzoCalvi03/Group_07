@@ -20,7 +20,6 @@ public enum Type {	//enumerativo per i 6 tipi di tessera oggetto
 			return "PINK";
 		case BLUE:
 			return "BLUE";
-			
 		case WHITE:
 			return "WHITE";
 		

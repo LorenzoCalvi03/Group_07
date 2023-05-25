@@ -32,7 +32,7 @@ public class Tile {
 				}
 			else 
 			{
-				return "Null";
+				return " - ";
 			}
 			
 		}
