@@ -36,7 +36,7 @@ public class Main {
 		    Player player3 = new Player(sc.nextLine());
 		    Player player4 = new Player(sc.nextLine());
 		}
-		System.out.println("Primo turno: "+player1);
+		System.out.println("Primo turno: ");
 		System.out.println();
 	}
 }

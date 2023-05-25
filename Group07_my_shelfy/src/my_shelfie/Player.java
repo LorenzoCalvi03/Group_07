@@ -1,10 +1,10 @@
 package my_shelfie;
 
-import java.util.Scanner;
 import java.util.*;
 import components.Board;
 import components.Bookshelf;
 import tile.Tile;
+import tile.TileObject;
 
 public class Player {
 	private String Username;
@@ -13,6 +13,7 @@ public class Player {
 	private Bookshelf shelf;
 	// private Personalgoal personal;
 	private int turno;
+	private TileObject tileObject;
 	private boolean finito=false;
 	private static Set<String> usedUsernames = new HashSet<String>();
 	
@@ -25,6 +26,9 @@ public class Player {
 		usedUsernames.add(Username);
 		this.shelf= new Bookshelf();
 		shelf.StampaMatrice();
+		this.assignRandomTileObject();
+		
+		
 	}
 
 	public Player() {
@@ -83,6 +87,17 @@ public class Player {
 		}
 		
 	}
+	  private void assignRandomTileObject() {
+	        int tileObjectNumber = assignRandomTileObjectNumber();
+	        this.tileObject = new TileObject(tileObjectNumber);
+	        System.out.println("Questa è la carta obiettivo personale di: "+ this.Username);
+	        tileObject.printTileObject();
+	    }
+
+	    private int assignRandomTileObjectNumber() {
+	        List<Integer> tileObjectOrder = TileObject.generateRandomTileObjectOrder();
+	        return tileObjectOrder.get(COUNTER % 4);
+	    }
 	
 	
 	
