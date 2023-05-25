@@ -1,7 +1,7 @@
 package my_shelfie;
 
 import java.util.*;
-
+import components.Bookshelf;
 import components.Board;
 
 public class Main {
@@ -10,7 +10,9 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		Board board = new Board();
 		System.out.println("Quanti giocatori siete?: ");
-		GameMaster.g.set_players(sc.nextInt());
+		int NumPlayer = sc.nextInt();
+		GameMaster.g.set_players(NumPlayer);
+		sc.nextLine();
 		board.fill();
 
 		for (int i = 0; i < GameMaster.g.cols; ++i) {
@@ -24,6 +26,19 @@ public class Main {
 			}
 			System.out.println(" ");
 		}
-		sc.close();
+		
+		System.out.println("Immettere nomi utente: ");
+		Player player1 =new Player(sc.nextLine());
+		Player player2 =new Player(sc.nextLine());
+		if (NumPlayer == 3) {
+		    Player player3 = new Player(sc.nextLine());
+		}else if (NumPlayer == 4) {
+		    Player player3 = new Player(sc.nextLine());
+		    Player player4 = new Player(sc.nextLine());
+		}
+		System.out.println("Primo turno: "+player1);
+		System.out.println();
 	}
 }
+
+

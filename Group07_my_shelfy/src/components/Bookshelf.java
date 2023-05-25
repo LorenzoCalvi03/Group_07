@@ -22,7 +22,7 @@ public class Bookshelf {
 	public void StampaMatrice() {
 		for (int riga = 0; riga < rows; riga++) {
 			for (int colonna = 0; colonna < columns; colonna++) {
-				System.out.println(schemaMatrice[riga][colonna].toString());
+				System.out.print(schemaMatrice[riga][colonna].toString());
 			}
 			System.out.println();
 		}

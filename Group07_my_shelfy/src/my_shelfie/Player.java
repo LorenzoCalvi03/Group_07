@@ -1,18 +1,31 @@
 package my_shelfie;
 
 import java.util.Scanner;
-
+import java.util.*;
 import components.Board;
 import components.Bookshelf;
 import tile.Tile;
 
 public class Player {
+	private String Username;
 	private int points;
 	public static int COUNTER;
 	private Bookshelf shelf;
 	// private Personalgoal personal;
 	private int turno;
 	private boolean finito=false;
+	private static Set<String> usedUsernames = new HashSet<String>();
+	
+	public Player(String Username) {
+		while(usedUsernames.contains(Username)) {
+			System.out.println("Il nome utente è già stato utilizzato. Inserire un nuovo nome utente:");
+			Username = new Scanner(System.in).nextLine();
+        }
+		this.Username=Username;
+		usedUsernames.add(Username);
+		this.shelf= new Bookshelf();
+		shelf.StampaMatrice();
+	}
 
 	public Player() {
 		if (COUNTER < 4) {
@@ -64,8 +77,15 @@ public class Player {
 		System.out.println("dammi l'ordinata della y della carta da pescare");
 		y=sc.nextInt();
 		Tile t=new Tile(Board.b.pescaTile(x,y));
+		}
+		
+	}
 	
+	@Override
+	public String toString() {
+		String p= this.Username;
+		return p;
 		
 	}
 	}
-}
+
