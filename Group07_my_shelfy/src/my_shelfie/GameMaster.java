@@ -1,10 +1,16 @@
 package my_shelfie;
 
+import common_goal_cards.CommonGoal;
+import common_goal_cards.PilaCommonGoals;
+
 public class GameMaster {
 
 	public static GameMaster g = new GameMaster();
 		int cols = 9;
 		int rows = 9;
+		PilaCommonGoals p = new PilaCommonGoals();
+		CommonGoal commongoal1 = new CommonGoal(PilaCommonGoals.pescaCarta());
+		CommonGoal commongoal2 = new CommonGoal(PilaCommonGoals.pescaCarta());
 	
 	private int[][] accessible_tiles = {{5, 5, 5, 3, 4, 5, 5, 5, 5}, 
 									{5, 5, 5, 2, 2, 4, 5, 5, 5},  

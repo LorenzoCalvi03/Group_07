@@ -17,8 +17,7 @@ public class Player {
 	private TileObject tileObject;
 	private boolean finito=false;
 	private static Set<String> usedUsernames = new HashSet<String>();
-	private CommonGoal commonGoal1;
-	private CommonGoal commonGoal2;
+	
 	
 	public Player(String Username) {
 		while(usedUsernames.contains(Username)) {
@@ -30,8 +29,6 @@ public class Player {
 		this.shelf= new Bookshelf();
 		shelf.StampaMatrice();
 		this.assignRandomTileObject();
-		this.commonGoal1 = CommonGoal.generateRandomCommonGoal();
-		this.commonGoal2 = CommonGoal.generateRandomCommonGoal();
 		}
 	public String getUsername() { //metodo costruito per ritornare lo Username nel Main
 	    return this.Username;
@@ -104,16 +101,7 @@ public class Player {
 	        List<Integer> tileObjectOrder = TileObject.generateRandomTileObjectOrder();
 	        return tileObjectOrder.get(COUNTER % 4);//viene utilizzato per ottenere l'elemento corrispondente all'indice calcolato da counter % 4 dalla lista tileObjectOrder
 	    }//generatore casuale delle Carte Obiettivo Personale
-	    
-	    public CommonGoal getCommonGoal1() {//metodo per prendere le commonGoal, per poi usare questo metodo nel main
-	    	return commonGoal1;
-	    }
-	    
-	    public CommonGoal getCommonGoal2() {//metodo per prendere le commonGoal, per poi usare questo metodo nel main
-	    	return commonGoal2;
-	    }
-	    
-	
+	    	
 	
 	@Override
 	public String toString() {
