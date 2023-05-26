@@ -8,6 +8,7 @@ public class GameMaster {
 	public static GameMaster g = new GameMaster();
 		int cols = 9;
 		int rows = 9;
+		
 		PilaCommonGoals p = new PilaCommonGoals();
 		CommonGoal commongoal1 = new CommonGoal(PilaCommonGoals.pescaCarta());
 		CommonGoal commongoal2 = new CommonGoal(PilaCommonGoals.pescaCarta());
