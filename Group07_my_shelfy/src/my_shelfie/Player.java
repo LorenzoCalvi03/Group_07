@@ -5,6 +5,8 @@ import components.Board;
 import components.Bookshelf;
 import tile.Tile;
 import tile.TileObject;
+import common_goal_cards.CommonGoal;
+import common_goal_cards.TypeCG;
 
 public class Player {
 	private String Username;
@@ -15,6 +17,8 @@ public class Player {
 	private TileObject tileObject;
 	private boolean finito=false;
 	private static Set<String> usedUsernames = new HashSet<String>();
+	private CommonGoal commonGoal1;
+	private CommonGoal commonGoal2;
 	
 	public Player(String Username) {
 		while(usedUsernames.contains(Username)) {
@@ -26,8 +30,11 @@ public class Player {
 		this.shelf= new Bookshelf();
 		shelf.StampaMatrice();
 		this.assignRandomTileObject();
-		
-		
+		this.commonGoal1 = CommonGoal.generateRandomCommonGoal();
+		this.commonGoal2 = CommonGoal.generateRandomCommonGoal();
+		}
+	public String getUsername() { //metodo costruito per ritornare lo Username nel Main
+	    return this.Username;
 	}
 
 	public Player() {
@@ -91,13 +98,21 @@ public class Player {
 	        this.tileObject = new TileObject(tileObjectNumber);
 	        System.out.println("Questa è la carta obiettivo personale di: "+ this.Username);
 	        tileObject.printTileObject();
-	    }
+	    }// responsabile della generazione e assegnazione effettiva dell'oggetto TileObject casuale al giocatore corrente
 
 	    private int assignRandomTileObjectNumber() {
 	        List<Integer> tileObjectOrder = TileObject.generateRandomTileObjectOrder();
-	        return tileObjectOrder.get(COUNTER % 4);
+	        return tileObjectOrder.get(COUNTER % 4);//viene utilizzato per ottenere l'elemento corrispondente all'indice calcolato da counter % 4 dalla lista tileObjectOrder
+	    }//generatore casuale delle Carte Obiettivo Personale
+	    
+	    public CommonGoal getCommonGoal1() {//metodo per prendere le commonGoal, per poi usare questo metodo nel main
+	    	return commonGoal1;
 	    }
-	
+	    
+	    public CommonGoal getCommonGoal2() {//metodo per prendere le commonGoal, per poi usare questo metodo nel main
+	    	return commonGoal2;
+	    }
+	    
 	
 	
 	@Override

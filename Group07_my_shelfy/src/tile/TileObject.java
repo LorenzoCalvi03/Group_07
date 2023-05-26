@@ -76,15 +76,15 @@ private static String[][] matrix = new String[6][5];
 									{" - ","blue","white"," - "," - "}, 
 									{" - "," - "," - "," - "," pink "}, 
 									{"orange" , "-" , "-" , "green" ,"-",}};//DA CONTROLLARE
+    
     private String[][] Personal6 = {{" - "," - ","azure"," - ","green"}, 
 									{" - "," - "," - "," - "," - "},  
 									{" - "," - "," - ","white"," - "}, 
 									{" - "," - "," - "," - ", " - "}, 
 									{" - ","orange"," - ","blue"," - "}, 
 									{"pink"," - "," - "," - "," - "}};
-    
 
-    private String[][] Personal7 = 	{{"green"," - " ," - "," - " , " - "}, 
+			 private String[][] Personal7 = 	{{"green"," - " ," - "," - " , " - "}, 
 									{" - "," - " ," - ", "blue" , " - " },  
 									{" - ","pink" ," - ", " - " , " - "}, 
 									{"azure"," - " ," - "," - " , " - "}, 
@@ -135,7 +135,7 @@ private static String[][] matrix = new String[6][5];
         }
         Collections.shuffle(tileObjectNumbers);
         return tileObjectNumbers;
-    }
+    }//generatore casuale della tessera Obiettivo Personale
     public void printTileObject() {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {

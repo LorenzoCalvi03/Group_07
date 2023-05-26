@@ -1,5 +1,7 @@
 package common_goal_cards;
 
+import java.util.Random;
+
 public class CommonGoal {
 	private TypeCG type;
 
@@ -32,6 +34,12 @@ public class CommonGoal {
 	public TypeCG getType() {
 		return this.type;
 	}
+	public static CommonGoal generateRandomCommonGoal() {
+        TypeCG[] types = TypeCG.values();
+        TypeCG randomType = types[new Random().nextInt(types.length)];
+        return new CommonGoal(randomType);
+    }
+
 
 	public String toString() {
 		if (this.type != null) {
