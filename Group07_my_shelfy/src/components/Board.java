@@ -70,4 +70,18 @@ public   class  Board {
 		
 		
 	}
+	
+	public void printBoard() {
+		for (int i = 0; i < 9; ++i) {
+			for (int j = 0; j < 9; ++j) {
+				if(this.getTile(i, j) != null) {
+					System.out.print(this.getTile(i, j).toString()+"\t");
+				}
+				else {
+					System.out.print("");
+				}
+			}
+			System.out.println(" ");
+		}
+	}
 }

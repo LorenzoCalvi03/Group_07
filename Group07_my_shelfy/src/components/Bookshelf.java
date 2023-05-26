@@ -22,11 +22,11 @@ public class Bookshelf {
 	public void StampaMatrice() {
 		for (int riga = 0; riga < rows; riga++) {
 			for (int colonna = 0; colonna < columns; colonna++) {
-				System.out.print(schemaMatrice[riga][colonna].toString());
+				System.out.print(schemaMatrice[riga][colonna].toString()+"\t");
 			}
-			System.out.println();
+			System.out.println("");
 		}
-		System.out.println();
+		System.out.println(" ");
 	}
 
 	public void inizializzaMatrice() {
@@ -167,6 +167,10 @@ public class Bookshelf {
 			schemaMatrice[riga-1][colSel] = t;
 			sc.close();
 
+	}
+	
+	public Tile getTile(int x, int y) {
+		return this.schemaMatrice[x][y];
 	}
 
 }

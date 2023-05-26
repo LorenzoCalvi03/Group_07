@@ -11,7 +11,6 @@ public class Player {
 	private int points;
 	public static int COUNTER;
 	private Bookshelf shelf;
-	// private Personalgoal personal;
 	private int turno;
 	private TileObject tileObject;
 	private boolean finito=false;
@@ -106,6 +105,40 @@ public class Player {
 		String p= this.Username;
 		return p;
 		
+	}
+	
+	public void personalGoalPoints() {//conta e somma punti personal goal
+		int counter=0;
+		for(int i=0; i<6; i++) {
+			for (int j=0; j<5; j++) {
+				if(this.shelf.getTile(i, j).equals(this.tileObject.getType(i, j))) {
+					counter++;
+				}
+			}
+		}
+		switch(counter){
+		case 1:
+			this.points+=1;
+			break;
+		case 2:
+			this.points+=2;
+			break;
+		case 3:
+			this.points+=4;
+			break;
+		case 4:
+			this.points+=6;
+			break;
+		case 5:
+			this.points+=9;
+			break;
+		case 6:
+			this.points+=12;
+			break;
+		default:
+			points+=0;
+			break;
+		}
 	}
 	}
 
