@@ -158,6 +158,37 @@ public enum TypeCG {
 		}
 		return false;
 	}
+	
+	public String toString() {
+		switch (this) {
+			case A:
+				return "5 colonne con altezza crescente o decrescente";
+			case B:
+				return "diagonale con tessere dello stesso tipo";
+			case C:
+				return "cinque tessere dello stesso tipo che formano una X";
+			case D:
+				return "4 gruppi separati di 4 tessere dello stesso tipo";
+			case E:
+				return "4 righe formate da 5 tessere di massimo 3 tipi differenti";
+			case F:
+				return "4 tessere dello stesso tipo nei 4 angoli";
+			case G:
+				return "6 gruppi di 2 tessere dello stesso tipo";
+			case H:
+				return "3 colonne formate da 6 tessere di massimo 3 tipi differenti";
+			case I:
+				return "2 colonne formate ciascuna da 6 tipi diversi di tessere";
+			case L:
+				return "2 quadrati separati di dimensione 2x2 di tessere dello stesso tipo";
+			case M:
+				return "2 righe formate da 5 tipi diversi di tessere";
+			case N:
+				return "8 tessere dello stesso tipo (in qualunque posizione)";
+			default:
+				return "non valido";
+		}
+	}
 
 	public boolean isReached(String[][] matrix) {
 		int rows = matrix.length;
