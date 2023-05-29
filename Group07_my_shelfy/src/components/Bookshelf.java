@@ -20,7 +20,12 @@ public class Bookshelf {
 	}
 
 	public void StampaMatrice() {
+		for (int i = 0; i < 5; ++i) {
+			System.out.print("\t "+i);
+		}
+		System.out.println(" ");
 		for (int riga = 0; riga < rows; riga++) {
+			System.out.print(riga+"\t ");
 			for (int colonna = 0; colonna < columns; colonna++) {
 				System.out.print(schemaMatrice[riga][colonna].toString()+"\t");
 			}

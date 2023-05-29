@@ -136,8 +136,14 @@ private static String[][] matrix = new String[6][5];
         Collections.shuffle(tileObjectNumbers);
         return tileObjectNumbers;
     }//generatore casuale della tessera Obiettivo Personale
+    
     public void printTileObject() {
+    	 for (int i = 0; i < matrix[i].length; i++) {
+    		 System.out.print("\t "+i);
+ 		}
+ 		System.out.println(" ");
         for (int i = 0; i < matrix.length; i++) {
+        	System.out.print(i+"\t ");
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + " \t");
             }
