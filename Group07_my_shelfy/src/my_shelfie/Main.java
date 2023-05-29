@@ -41,8 +41,13 @@ public class Main {
 	    for (int i = 0; i < players.size(); i++) {
 	        System.out.println("Giocatore " + (i + 1) + ": " + players.get(i).getUsername());
 	    }
+	    
+	    System.out.println("Il primo giocatore pesca");
+	    for (int i = 0; i < players.size(); i++) {
+	        System.out.println("Giocatore " + (i + 1) + " pesca: ");
+	        players.get(i).pescaCarte();
+	    }
 
-	    System.out.println("Primo turno: ");
 	}
 
 }

@@ -86,7 +86,6 @@ public class Player {
 		y=sc.nextInt();
 		Tile t=new Tile(Board.b.pescaTile(x,y));
 		shelf.inserisciTile(colSel,t);  
-		
 		}
 		
 	}
