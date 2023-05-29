@@ -73,13 +73,13 @@ public class Bookshelf {
 				TileDaInserire=this.scegliSpazi();
 
 			} while (TileDaInserire < 1 || TileDaInserire > 3);
-			if (countEmptyspace(colSel) > TileDaInserire) {
+			if (countEmptyspace(colSel) < TileDaInserire) {
 				Scanner sc= new Scanner(System.in);
 				int scelta=0;
 					System.out.println("Numero di spazi non disponibili ");
 					System.out.println("Decidi se cambiare colonna premendo 1 o quanti spazi da inserire premendo 2  ");
 					scelta=sc.nextInt();
-					if(scelta>1){
+					if(scelta==1){
 						TileDaInserire=this.scegliSpazi();
 					}
 					else{
@@ -163,9 +163,9 @@ public class Bookshelf {
 		int riga;
 			this.StampaMatrice();
 			System.out.println("Scegli in che riga inserire la tessera ");
-			riga = sc.nextInt();
+		    riga = sc.nextInt();
 			schemaMatrice[riga-1][colSel] = t;
-			sc.close();
+			sc.nextLine();
 
 	}
 	

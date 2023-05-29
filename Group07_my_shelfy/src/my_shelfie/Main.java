@@ -49,7 +49,7 @@ public class Main {
 	        Player player = new Player(sc.nextLine());
 	        players.add(player);
 	    }
-
+	    
 	    // Genera l'ordine casuale dei giocatori
 	    Collections.shuffle(players);
 
@@ -57,8 +57,13 @@ public class Main {
 	    for (int i = 0; i < players.size(); i++) {
 	        System.out.println("Giocatore " + (i + 1) + ": " + players.get(i).getUsername());
 	    }
+	    
+	    System.out.println("Il primo giocatore pesca");
+	    for (int i = 0; i < players.size(); i++) {
+	        System.out.println("Giocatore " + (i + 1) + " pesca: ");
+	        players.get(i).pescaCarte();
+	    }
 
-	    System.out.println("Primo turno: ");
 	}
 
 }
