@@ -73,6 +73,11 @@ public   class  Board {
 	
 	public void printBoard() {
 		for (int i = 0; i < 9; ++i) {
+			System.out.print("\t "+i);
+		}
+		System.out.println(" ");
+		for (int i = 0; i < 9; ++i) {
+			System.out.print(i+"\t ");
 			for (int j = 0; j < 9; ++j) {
 				if(this.getTile(i, j) != null) {
 					System.out.print(this.getTile(i, j).toString()+"\t");
@@ -81,7 +86,7 @@ public   class  Board {
 					System.out.print("");
 				}
 			}
-			System.out.println(" ");
+			System.out.println("\n");
 		}
 	}
 }
