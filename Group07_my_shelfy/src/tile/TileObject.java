@@ -116,7 +116,7 @@ private static String[][] matrix = new String[6][5];
     
     private String[][] Personal11 = {{" - "," - " ,"pink"," - " , " - "}, 
 									{" - ","white" ," -" ," - " , " - "},  
-									{"orange"," - " ," - "," - " , " - "}, 
+									{"orange", " - " ," - "," - " , " - "}, 
 									{" - "," - " ,"blue"," - " , " - "}, 
 									{" - "," - " ," - "," - " , "green"}, 
 									{" - "," - " ," - ","azure" , " - "}};

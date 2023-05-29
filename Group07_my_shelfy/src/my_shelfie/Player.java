@@ -27,6 +27,7 @@ public class Player {
 		this.Username=Username;
 		usedUsernames.add(Username);
 		this.shelf= new Bookshelf();
+		System.out.println("Questa è la tua Bookshelf:  ");
 		shelf.StampaMatrice();
 		this.assignRandomTileObject();
 		}
@@ -80,23 +81,22 @@ public class Player {
 		int x=0,y=0,colonna=0;;
 		Scanner sc= new Scanner(System.in);
 	for(int i=0;i<ncarte;i++){
-		System.out.println("dammi l'ordinata della x della carta da pescare");
+		System.out.println("digita il numero della riga della carta da pescare");
 		x=sc.nextInt();
-		System.out.println("dammi l'ordinata della y della carta da pescare");
+		System.out.println("digita il numero della colonna della carta da pescare");
 		y=sc.nextInt();
 		Tile t=new Tile(Board.b.pescaTile(x,y));
 		shelf.StampaMatrice();
-		do {
-		    if(Board.b.puoPescare(x,y)) {
-		    shelf.inserisciTile(colSel,t);  
-		    }
-			System.out.println("dammi l'ordinata della x della carta da pescare");
-			x=sc.nextInt();
-			System.out.println("dammi l'ordinata della y della carta da pescare");
-			y=sc.nextInt();
-			Tile c=new Tile(Board.b.pescaTile(x,y));
-			shelf.inserisciTile(colSel,c);
-		}while(!Board.b.puoPescare(x,y));
+		while(!Board.b.puoPescare(x,y)) {
+		    System.out.println("La carta in posizione (" + x + ", " + y + ") non è pescabile.");
+		    System.out.println("Inserisci un'altra coppia di coordinate:");
+		    System.out.println("digita il numero della riga della carta da pescare");
+		    x=sc.nextInt();
+		    System.out.println("digita il numero della colonna della carta da pescare");
+		    y=sc.nextInt();
+		}
+		Tile c=new Tile(Board.b.pescaTile(x,y));
+		shelf.inserisciTile(colSel,c);
 		
 	}
 	}

@@ -46,6 +46,7 @@ public class Main {
 	    }
 	    
 	   System.out.println("\nIl primo giocatore pesca");
+	   System.out.println(" ");
 	    for (int i = 0; i < players.size(); i++) {
 	        System.out.println("Giocatore " + (i + 1) + " pesca: ");
 	        players.get(i).pescaCarte();
