@@ -26,23 +26,7 @@ public class Main {
 		board.printBoard();
 		System.out.println("Common goal 1: "+ GameMaster.g.commongoal1.toString());
 		System.out.println("Common goal 2: "+ GameMaster.g.commongoal2.toString());
-		System.out.println("Immettere nome utente1: ");
-		Player player1 =new Player(sc.nextLine());
-		
-		System.out.println("Immettere nome utente2: ");
-		Player player2 =new Player(sc.nextLine());
-		
-		if (numPlayer == 3) {
-			System.out.println("Immettere nome utente3: ");
-		    Player player3 = new Player(sc.nextLine());
-		}else if (numPlayer == 4) {
-			System.out.println("Immettere nome utente3: ");
-		    Player player3 = new Player(sc.nextLine());
-		    System.out.println("Immettere nome utente4: ");
-		    Player player4 = new Player(sc.nextLine());
-		}
-
-		List<Player> players = new ArrayList<Player>();
+      	List<Player> players = new ArrayList<Player>();
 
 	    for (int i = 1; i <= numPlayer; i++) {
 	        System.out.println("Immettere nome utente" + i + ": ");
