@@ -85,9 +85,20 @@ public class Player {
 		System.out.println("dammi l'ordinata della y della carta da pescare");
 		y=sc.nextInt();
 		Tile t=new Tile(Board.b.pescaTile(x,y));
-		shelf.inserisciTile(colSel,t); 
-		}
+		shelf.StampaMatrice();
+		do {
+		    if(Board.b.puoPescare(x,y)) {
+		    shelf.inserisciTile(colSel,t);  
+		    }
+			System.out.println("dammi l'ordinata della x della carta da pescare");
+			x=sc.nextInt();
+			System.out.println("dammi l'ordinata della y della carta da pescare");
+			y=sc.nextInt();
+			Tile c=new Tile(Board.b.pescaTile(x,y));
+			shelf.inserisciTile(colSel,c);
+		}while(!Board.b.puoPescare(x,y));
 		
+	}
 	}
 	  private void assignRandomTileObject() {
 	        int tileObjectNumber = assignRandomTileObjectNumber();
@@ -143,4 +154,3 @@ public class Player {
 		}
 	}
 	}
-

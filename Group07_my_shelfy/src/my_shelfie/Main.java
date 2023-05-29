@@ -2,6 +2,7 @@ package my_shelfie;
 
 import java.util.*;
 import components.Bookshelf;
+import tile.Tile;
 import components.Board;
 import common_goal_cards.CommonGoal;
 import common_goal_cards.TypeCG;
@@ -49,6 +50,7 @@ public class Main {
 	        System.out.println("Giocatore " + (i + 1) + " pesca: ");
 	        players.get(i).pescaCarte();
 	    }
+		
 
 	}
 
