@@ -26,7 +26,7 @@ public class Main {
 		board.printBoard();
 		System.out.println("Common goal 1: "+ GameMaster.g.commongoal1.toString());
 		System.out.println("Common goal 2: "+ GameMaster.g.commongoal2.toString());
-		List<Player> players = new ArrayList<>();
+		List<Player> players = new ArrayList<Player>();
 
 	    for (int i = 1; i <= numPlayer; i++) {
 	        System.out.println("Immettere nome utente" + i + ": ");
