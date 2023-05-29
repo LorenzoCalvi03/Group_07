@@ -85,7 +85,7 @@ public class Player {
 		System.out.println("dammi l'ordinata della y della carta da pescare");
 		y=sc.nextInt();
 		Tile t=new Tile(Board.b.pescaTile(x,y));
-		shelf.inserisciTile(colSel,t);  
+		shelf.inserisciTile(colSel,t); 
 		}
 		
 	}

@@ -165,7 +165,7 @@ public class Bookshelf {
 			System.out.println("Scegli in che riga inserire la tessera ");
 		    riga = sc.nextInt();
 			schemaMatrice[riga-1][colSel] = t;
-			sc.close();
+			sc.nextLine();
 
 	}
 	

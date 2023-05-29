@@ -33,7 +33,7 @@ public class Main {
 	        Player player = new Player(sc.nextLine());
 	        players.add(player);
 	    }
-
+	    
 	    // Genera l'ordine casuale dei giocatori
 	    Collections.shuffle(players);
 
