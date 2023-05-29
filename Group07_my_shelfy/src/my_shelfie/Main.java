@@ -42,9 +42,25 @@ public class Main {
 		    Player player4 = new Player(sc.nextLine());
 		}
 
-		System.out.println("Primo turno: ");
+		List<Player> players = new ArrayList<Player>();
 
+	    for (int i = 1; i <= numPlayer; i++) {
+	        System.out.println("Immettere nome utente" + i + ": ");
+	        Player player = new Player(sc.nextLine());
+	        players.add(player);
+	    }
+
+	    // Genera l'ordine casuale dei giocatori
+	    Collections.shuffle(players);
+
+	    System.out.println("Ordine casuale dei giocatori: ");
+	    for (int i = 0; i < players.size(); i++) {
+	        System.out.println("Giocatore " + (i + 1) + ": " + players.get(i).getUsername());
+	    }
+
+	    System.out.println("Primo turno: ");
 	}
+
 }
 
 
