@@ -86,6 +86,11 @@ public class Player {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Se vuoi pescare da una riga scegli 1,  se vuoi pescare da una colonna scegli 2");
 		s=sc.nextInt();
+		while(s<1 || s>2) {
+			System.out.println("Il valore inserito non è corretto, riprova con 1 o 2");
+			s=sc.nextInt();
+			}
+		
 		if(s==1) {
 	    Board.b.printBoard();
 		System.out.println("digita il numero della riga della carta da pescare");
