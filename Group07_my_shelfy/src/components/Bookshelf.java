@@ -169,7 +169,7 @@ public class Bookshelf {
 			this.StampaMatrice();
 			System.out.println("Scegli in che riga inserire la tessera ");
 		    riga = sc.nextInt();
-			schemaMatrice[riga-1][colSel] = t;
+			schemaMatrice[riga][colSel] = t;
 			sc.nextLine();
 
 	}
