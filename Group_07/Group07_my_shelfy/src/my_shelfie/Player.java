@@ -1,3 +1,4 @@
+
 package my_shelfie;
 
 import java.util.*;
@@ -76,15 +77,43 @@ public class Player {
 	}
 
 	public void pescaCarte() {
+		
+		this.shelf.StampaMatrice();
 		int colSel=shelf.getColumns();
 		int ncarte=this.shelf.nTile(colSel);
+		int s=0;
 		int x=0,y=0,colonna=0;;
 		Scanner sc= new Scanner(System.in);
-	for(int i=0;i<ncarte;i++){
+		System.out.println("Se vuoi pescare da una riga scegli 1,  se vuoi pescare da una colonna scegli 2");
+		s=sc.nextInt();
+		if(s==1) {
+	    Board.b.printBoard();
+		System.out.println("digita il numero della riga della carta da pescare");
+	    x=sc.nextInt();
+		for(int i=0;i<ncarte;i++){
+		Board.b.printBoard();
+		System.out.println("digita il numero della colonna della carta da pescare");
+		y=sc.nextInt();
+		while(!Board.b.puoPescare(x,y)) {
+		System.out.println("La carta in posizione (" + x + ", " + y + ") non è pescabile.");
+		System.out.println("Inserisci un'altra coppia di coordinate:");
 		System.out.println("digita il numero della riga della carta da pescare");
 		x=sc.nextInt();
 		System.out.println("digita il numero della colonna della carta da pescare");
 		y=sc.nextInt();
+		}
+		Tile t=new Tile(Board.b.pescaTile(x,y));
+		shelf.inserisciTile(colSel,t);
+		shelf.StampaMatrice();
+		}
+		}
+		if(s==2) {
+		System.out.println("digita il numero della colonna della carta da pescare");
+		y=sc.nextInt();
+		for(int i=0;i<ncarte;i++){
+		Board.b.printBoard();	
+		System.out.println("digita il numero della riga della carta da pescare");
+		x=sc.nextInt();
 		while(!Board.b.puoPescare(x,y)) {
 		    System.out.println("La carta in posizione (" + x + ", " + y + ") non è pescabile.");
 		    System.out.println("Inserisci un'altra coppia di coordinate:");
@@ -93,11 +122,13 @@ public class Player {
 		    System.out.println("digita il numero della colonna della carta da pescare");
 		    y=sc.nextInt();
 		    }
-		Tile t=new Tile(Board.b.pescaTile(x,y));
-		shelf.inserisciTile(colSel,t);
+		Tile c=new Tile(Board.b.pescaTile(x,y));
+		shelf.inserisciTile(colSel,c);
 		shelf.StampaMatrice();
+		}
 	}
 	}
+
 	  private void assignRandomTileObject() {
 	        int tileObjectNumber = assignRandomTileObjectNumber();
 	        this.tileObject = new TileObject(tileObjectNumber);
