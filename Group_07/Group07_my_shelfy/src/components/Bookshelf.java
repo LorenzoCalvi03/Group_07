@@ -44,17 +44,15 @@ public class Bookshelf {
 
 	public int getColumns() {
 		int colSel;
-		do {
+
 			Scanner sc = new Scanner(System.in);
 			System.out.println("In che colonna vuoi inserire le carte?");
 			colSel = sc.nextInt();// per colSel s'intende la colonna selezionata dal giocatore
 
-			if (colSel < 0 || colSel > 4) {
-				System.out.println("Colonna inesistente, seleziona una colonna giusta");
-				sc.close();
+			while (colSel < 0 || colSel > 5) {
+				System.out.println("per le regole del gioco, si possono inserire solo nelle colonne da 0 a 5, inserisci valore valido");
+				colSel = sc.nextInt();
 			}
-		} while (colSel < 0 || colSel > 4);
-
 		return colSel;
 	}
 
@@ -99,12 +97,12 @@ public class Bookshelf {
 			int TileDaInserire;
 			Scanner sc = new Scanner(System.in);
 			System.out.println("quante carte vuoi inserire? (compreso tra 1 e 3)");
-			TileDaInserire = sc.nextInt();
-
-			if (TileDaInserire < 1 || TileDaInserire > 3) {
-				System.out.println("per le regole del gioco, si possono raccogliere solo Tile da 1 a 3");
-				sc.close();
+		    TileDaInserire = sc.nextInt();
+			while (TileDaInserire < 1 || TileDaInserire > 3) {
+				System.out.println("per le regole del gioco, si possono raccogliere solo Tile da 1 a 3, inserisci valore valido");
+				TileDaInserire = sc.nextInt();
 			}
+		
 			return TileDaInserire;
 		}
 	public boolean emptySpace() {
@@ -167,7 +165,7 @@ public class Bookshelf {
 		Scanner sc = new Scanner(System.in);
 		int riga;
 			this.StampaMatrice();
-			System.out.println("Scegli in che riga inserire la tessera ");
+			System.out.println("Scegli in che riga inserire la tessera (se vuota si deve partire da 5)");
 		    riga = sc.nextInt();
 			schemaMatrice[riga][colSel] = t;
 			sc.nextLine();
