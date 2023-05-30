@@ -38,9 +38,9 @@ public   class  Board {
 	public boolean puoPescare(int x, int y) {
 		if (this.playGround[x][y] != null) {
 			if (((x > 0 && this.playGround[x - 1][y].getType()==null)
-					&& (x < GameMaster.g.getRows() - 1 && this.playGround[x + 1][y].getType()==null))
-					|| ((y > 0 && this.playGround[x][y - 1] != null)
-					&& (y < GameMaster.g.getCols() - 1 && this.playGround[x][y + 1].getType()==null))) {
+					|| (x < GameMaster.g.getRows() - 1 && this.playGround[x + 1][y].getType()==null))
+					|| ((y > 0 && this.playGround[x][y - 1] == null)
+					|| (y < GameMaster.g.getCols() - 1 && this.playGround[x][y + 1].getType()==null))) {
 				return true;
 			} else {
 				return false;
