@@ -55,8 +55,8 @@ private static String[][] matrix = new String[6][5];
     private String[][] Personal2 = {{"-"," - "," - "," - "," - "}, 
 			                        {" - ","pink"," - "," - "," - "},  
 			                        {"green"," - ","orange"," - "," - "}, 
-			                        {" - "," - "," - "," - "," white "}, 
-			                        {" - "," - "," - "," azure "," - "},
+			                        {" - "," - "," - "," - ","white"}, 
+			                        {" - "," - "," - ","azure"," - "},
 		                          	{" - "," - "," - "," - ","blue"}};
     private String[][] Personal3 = {{" - "," - "," - "," - "," - "}, 
 									{"blue"," - "," - ","orange"," - "},  
@@ -74,8 +74,8 @@ private static String[][] matrix = new String[6][5];
 									{" - ","azure"," - "," - "," - "},  
 									{" - "," - "," - "," - "," - "}, 
 									{" - ","blue","white"," - "," - "}, 
-									{" - "," - "," - "," - "," pink "}, 
-									{"orange" , "-" , "-" , "green" ,"-",}};//DA CONTROLLARE
+									{" - "," - "," - "," - ","pink"}, 
+									{"orange" , " - " , " - " , "green" ," - ",}};//DA CONTROLLARE
     
     private String[][] Personal6 = {{" - "," - ","azure"," - ","green"}, 
 									{" - "," - "," - "," - "," - "},  
