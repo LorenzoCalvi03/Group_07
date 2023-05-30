@@ -36,6 +36,9 @@ public   class  Board {
 	}
 
 	public boolean puoPescare(int x, int y) {
+		if(this.playGround[x][y].getType()==null) {
+			return false;
+		}
 		if(x==0 || x==8 || y==0 || y==8) {
 			return true;
 		}

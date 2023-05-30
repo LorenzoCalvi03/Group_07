@@ -76,11 +76,13 @@ public class Player {
 	}
 
 	public void pescaCarte() {
+		
 		int colSel=shelf.getColumns();
 		int ncarte=this.shelf.nTile(colSel);
 		int x=0,y=0,colonna=0;;
 		Scanner sc= new Scanner(System.in);
 	for(int i=0;i<ncarte;i++){
+		Board.b.printBoard();
 		System.out.println("digita il numero della riga della carta da pescare");
 		x=sc.nextInt();
 		System.out.println("digita il numero della colonna della carta da pescare");
