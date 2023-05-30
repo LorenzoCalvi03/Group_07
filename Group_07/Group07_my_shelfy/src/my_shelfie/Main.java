@@ -44,14 +44,19 @@ public class Main {
 	    for (int i = 0; i < players.size(); i++) {
 	        System.out.println("Giocatore " + (i + 1) + ": " + players.get(i).getUsername());
 	    }
-	    
-	   System.out.println("\nIl primo giocatore pesca");
-	   System.out.println(" ");
+	    boolean finito = false;
+	    int haTerminato=0;
+	   do {
 	    for (int i = 0; i < players.size(); i++) {
+	    	System.out.println("Turno numero: "+(i+1));
 	        System.out.println("Giocatore " + (players.get(i).getUsername()) + " pesca: ");
 	        players.get(i).pescaCarte();
+	        finito=players.get(i).finePartita();
+	        if(finito) {
+	        	haTerminato=i;
+	        }
 	    }
-		
+	   }while(finito!=false);
 
 	}
 

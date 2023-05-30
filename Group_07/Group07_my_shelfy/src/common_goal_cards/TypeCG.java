@@ -440,7 +440,20 @@ public enum TypeCG {
 			return count1 == 5 && count2 == 5;
 
 		case N:
-			return true;
+			int[] tileCounts = new int [10];
+			// Count the number of tiles of each type
+			for (int row = 0; row < rows; row++) {
+				for (int col = 0; col < cols; col++) {
+					String tile = matrix[row][col];
+					tileCounts [tile.charAt (0) ]++;
+				}
+			}
+			// Check if any tile type has a count of eight
+			for (int count : tileCounts) {
+				if (count == 8){
+					return true;
+					}
+				}
 
 		default:
 			return false;

@@ -111,7 +111,7 @@ public class Bookshelf {
 		boolean emptySpaces = true;
 
 		for (int i = 0; i < schemaMatrice.length; i++) {
-			for (int j = 0; i < schemaMatrice[0].length; j++) {
+			for (int j = 0; j < schemaMatrice[0].length; j++) {
 
 				if (schemaMatrice[i][j].getType() == null) {
 					emptySpaces = true;
