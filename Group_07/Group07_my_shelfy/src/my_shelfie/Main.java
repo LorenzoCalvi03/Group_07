@@ -61,7 +61,7 @@ public class Main {
 				Board.b.fill();
 			}
 	    }
-	   }while(finito!=false);
+	   }while(!finito);
 	   
 	   int posizione = 0;
 		for (int i = 0; i < players.size(); i++) {
@@ -76,7 +76,7 @@ public class Main {
 
 		}
 
-	}
+	
 
 }
 
