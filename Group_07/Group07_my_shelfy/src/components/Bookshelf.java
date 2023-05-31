@@ -175,5 +175,16 @@ public class Bookshelf {
 	public Tile getTile(int x, int y) {
 		return this.schemaMatrice[x][y];
 	}
+	
+	public String[][] getSchemaMatrice() {
+		 String[][] matrix= new String[rows][columns];
+		 for (int i=0;i<this.rows;i++) {
+			 for (int j=0; j<this.columns;j++)
+			 {
+				 matrix[i][j]=this.schemaMatrice[i][j].toString();
+			 }
+		 }
+		 return matrix;
+	 }
 
 }

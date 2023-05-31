@@ -62,6 +62,19 @@ public class Main {
 			}
 	    }
 	   }while(finito!=false);
+	   
+	   int posizione = 0;
+		for (int i = 0; i < players.size(); i++) {
+			if (GameMaster.g.commongoal1.getType().isReached(players.get(i).getShelf().getSchemaMatrice())) 
+				{posizione++;
+				players.get(i).CalcoloPunteggio(numPlayer, posizione);
+				}else
+				{
+				players.get(i).CalcoloPunteggio(numPlayer, 0);
+				}
+			}
+
+		}
 
 	}
 

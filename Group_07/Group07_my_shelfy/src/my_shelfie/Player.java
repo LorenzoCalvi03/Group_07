@@ -187,4 +187,64 @@ public class Player {
 			break;
 		}
 	}
+	
+	public void CalcoloPunteggio(int nplay, int pos) {
+		int commonpoint = 0;
+		switch (nplay) {
+		case 2:
+			if (pos == 1) {
+				commonpoint = 8;
+			} else {
+				commonpoint = 4;
+			}
+			if(pos==0) {
+				commonpoint=0;
+			}
+			break;
+		case 3:
+			if (pos == 1) {
+				commonpoint = 8;
+			} else {
+				if (pos == 2) {
+					commonpoint = 6;
+				} else {
+					if (pos == 3) {
+						commonpoint = 4;
+					}else {
+						commonpoint=0;
+					}
+					
+				}
+			}
+
+			break;
+		case 4:
+			if (pos == 1) {
+				commonpoint = 8;
+			} else {
+				if (pos == 2) {
+					commonpoint = 6;
+				} else {
+					if (pos == 3) {
+						commonpoint = 4;
+					} else {
+						commonpoint = 2;
+					}
+				}
+			}
+			if(pos==0) {
+				commonpoint=0;
+			}
+			break;
+		default:
+			commonpoint = 0;
+			this.points = shelf.TileAdjacent() + commonpoint;
+			this.personalGoalPoints();
+
+		}
+	}
+	
+	public Bookshelf getShelf() {
+		return this.shelf;
+	}
 	}
