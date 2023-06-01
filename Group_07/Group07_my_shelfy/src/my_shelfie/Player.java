@@ -16,7 +16,7 @@ public class Player {
 	private Bookshelf shelf;
 	private int turno;
 	private TileObject tileObject;
-	private boolean finito=false;
+	private boolean finito;
 	private static Set<String> usedUsernames = new HashSet<String>();
 	
 	
@@ -65,12 +65,12 @@ public class Player {
 	}
 
 	public boolean finePartita() {
-		if (this.shelf.emptySpace()) {
-			this.finito = false;
+		if (this.shelf.emptySpace()==false) {
+			this.finito = true;
 		}
 
 		else {
-			this.finito = true;
+			this.finito = false;
 		}
 
 		return this.finito;
@@ -238,10 +238,12 @@ public class Player {
 			break;
 		default:
 			commonpoint = 0;
-			this.points = shelf.TileAdjacent() + commonpoint;
+			}
+			this.points += shelf.TileAdjacent() ;
+			this.points += commonpoint;
 			this.personalGoalPoints();
 
-		}
+		
 	}
 	
 	public Bookshelf getShelf() {

@@ -46,22 +46,24 @@ public class Main {
 	    }
 	    int turno=0;
 	    boolean finito = false;
-	    int haTerminato=0;
 	   do {
 		   System.out.println("Turno numero: "+(turno+1));
 	    for (int i = 0; i < players.size(); i++) {
+	    	if(Board.b.isEmpty()) {
+				Board.b.fill();
+	    	}
 	        System.out.println("Giocatore " + (players.get(i).getUsername()) + " pesca: ");
 	        players.get(i).pescaCarte();
-	        finito=players.get(i).finePartita();
-	        if(finito) {
-	        	haTerminato=i;
+	        if(players.get(i).finePartita()&& i<players.size()-1) {
+	        	finito=true;
 	        }
-	        turno++;
-	        if(Board.b.isEmpty()) {
-				Board.b.fill();
-			}
+	        else if(players.get(i).finePartita()){
+	        	 finito=players.get(i).finePartita();
+	        }
+	       
 	    }
-	   }while(!finito);
+	    turno++;
+	   }while(finito==false);
 	   
 	   int posizione = 0;
 		for (int i = 0; i < players.size(); i++) {
@@ -73,7 +75,11 @@ public class Main {
 				players.get(i).CalcoloPunteggio(numPlayer, 0);
 				}
 			}
-
+		
+		System.out.println("Punteggi giocatori: ");
+		  for (int i = 0; i < players.size(); i++) {
+		        System.out.println("Giocatore " + (players.get(i).getUsername())+" " +(players.get(i).getPoint()) +" punti\n");
+		    }
 		}
 
 	

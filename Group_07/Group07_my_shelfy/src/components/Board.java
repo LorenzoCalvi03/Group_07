@@ -61,12 +61,15 @@ public   class  Board {
 		int counter = 0; // conta qunate tessere con altre tessere adiacenti ci sono
 		for (int i = 0; i < GameMaster.g.getRows(); i++) {
 			for (int j = 0; j < GameMaster.g.getCols(); j++) {
-				if (((i > 0 && this.playGround[i - 1][j].getType()!=null)
-						|| (i < GameMaster.g.getRows()-1 && this.playGround[i + 1][j].getType()!=null))
-						|| ((j > 0 && this.playGround[i][j - 1].getType()!= null)
-						|| (j < GameMaster.g.getCols()-1 && this.playGround[i][j + 1].getType()!=null))) {
-					counter++;
+				if(this.playGround[i][j].getType()!=null) {
+					if (((i > 0 && this.playGround[i - 1][j].getType()!=null)
+							|| (i < GameMaster.g.getRows()-1 && this.playGround[i + 1][j].getType()!=null))
+							|| ((j > 0 && this.playGround[i][j - 1].getType()!= null)
+							|| (j < GameMaster.g.getCols()-1 && this.playGround[i][j + 1].getType()!=null))) {
+						counter++;
+					}
 				}
+				
 			}
 		}
 		if (counter == 0) {

@@ -105,17 +105,21 @@ public class Bookshelf {
 		
 			return TileDaInserire;
 		}
-	public boolean emptySpace() {
+	public boolean emptySpace() {//ritorna se esistono celle vuote nella shelf
+		int counter = 0;
 		for (int i = 0; i < schemaMatrice.length; i++) {
 			for (int j = 0; j < schemaMatrice[0].length; j++) {
 				if (schemaMatrice[i][j].getType() == null) {
-					return true;
-				} else {
-					return false;
-				}
+					 counter ++;
 			}
 		}
-		return false;
+		}
+		if(counter == 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 
 	public int TileAdjacent() {
