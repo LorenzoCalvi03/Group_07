@@ -8,6 +8,11 @@ public class PilaCommonGoals {
 	public static ArrayList<CommonGoal> pila = new ArrayList<CommonGoal>();
 	public static int MAX_CARDS = 12;
 
+	
+	/**
+	 * Costruttore della classe PilaCommonGoals.
+	 * Inizializza la pila con tutte le carte Common Goal disponibili.
+	 */
 	public PilaCommonGoals() {
 		pila.add(new CommonGoal(TypeCG.A));
 		pila.add(new CommonGoal(TypeCG.B));
@@ -23,6 +28,11 @@ public class PilaCommonGoals {
 		pila.add(new CommonGoal(TypeCG.N));
 	}
 
+	
+	/**
+	 * Pesca una carta dalla pila in modo casuale.
+	 * restituisce la carta Common Goal pescata
+	 */
 	public static CommonGoal pescaCarta() {
 		Random r = new Random();
 		int position = r.nextInt(pila.size());

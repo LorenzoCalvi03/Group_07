@@ -159,6 +159,10 @@ public enum TypeCG {
 		return false;
 	}
 	
+	/**
+	 * Restituisce una rappresentazione testuale dell'enumerazione TypeCG.
+	 * restituisce la rappresentazione testuale dell'elemento TypeCG
+	*/
 	public String toString() {
 		switch (this) {
 			case A:
@@ -190,6 +194,11 @@ public enum TypeCG {
 		}
 	}
 
+
+/**Verifica se la condizione specificata dall'enumerazione TypeCG è raggiunta nella matrice data.
+ * matrix è la matrice di tessere
+ * restituisce true se la condizione è raggiunta, false altrimenti
+*/
 	public boolean isReached(String[][] matrix) {
 		int rows = matrix.length;
 		int cols = matrix[0].length;
