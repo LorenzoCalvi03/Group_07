@@ -9,4 +9,4 @@ Il programma controlla però che quella carta abbia almeno un lato libero.
 Al momento del pescaggio si può liberamente scegliere l'ordine con cui riporre le carte nella propria bookshelf, l'importante è che alla fine del turno non ci siano spazi vuoti tra le righe, ad esempio:
 se nella riga 5 è presente una carta, e nella riga 3 è presente una seconda carta e si conclude il turno dopo quest'ultimo inserimento, questo non rispetterebbe le regole poichè non può essere lasciata 
 libera la riga 4 della propria bookshelf.
-Per accedere al repository giusto selezionare la cartella Group_07 e dopo selezionare la cartella Group_07_my_shelfy
+Per accedere al repository giusto selezionare la cartella Group_07 e dopo selezionare la cartella Group_07_my_shelfie
