@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TileObject {
 	/**
-	 * La classe TileObject rappresenta un oggetto tessera del gioco. Ogni oggetto
+	 * La classe TileObject rappresenta le carte Obiettivo personale del gioco. Ogni oggetto
 	 * tessera ha una matrice di stringhe che definisce il suo layout. Fornisce
 	 * metodi per generare un ordine casuale degli oggetti tessera e per stampare il
 	 * layout della tessera.
